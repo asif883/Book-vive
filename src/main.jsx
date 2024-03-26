@@ -9,6 +9,7 @@ import './index.css'
 import Root from './Components/Root/Root.jsx';
 import Home from './Components/Home/Home.jsx';
 import ListedBooks from './Components/Listed-Books/ListedBooks.jsx';
+import BookDetails from './Components/Details/BookDetails.jsx';
 
 // import Nav from './Components/Header/Nav.jsx';
 
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
       {
         path: "/listed books",
         element : <ListedBooks></ListedBooks>
+      }
+      ,
+      {
+        path: "/bookDetails/:id",
+        element : <BookDetails></BookDetails>
       }
     ]
   

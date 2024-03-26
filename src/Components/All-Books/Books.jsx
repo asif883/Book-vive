@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Book from "../Book/Book";
+import BookDetails from "../Details/BookDetails";
 
 
 const Books = () => {
@@ -19,7 +20,11 @@ const Books = () => {
                 {
                         books.map(book => <Book key={book.id} book={book}></Book>)
                 }
+                
                </div>
+               {
+                books.map(book => <BookDetails key={book.id} book={book}></BookDetails>)
+               }
             </div>
         </div>
     );
