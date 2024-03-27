@@ -1,11 +1,4 @@
 .active{
-    color: green;
-    
+    color: rgb(7, 180, 7);  
 }
 
-/* .active:hover{
-    background: rgb(205, 205, 205);
-    border: 1 solid gray;
-    border-radius: 10px;
-    padding: 8px;
-} */

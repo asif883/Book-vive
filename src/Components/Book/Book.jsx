@@ -1,16 +1,16 @@
 import { FaRegStar } from "react-icons/fa";
 import PropTypes from 'prop-types';
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Book = ({book}) => {
-    const {bookName,image ,tags ,author,category,rating} = book ;
+    const {bookId,bookName,image ,tags ,author,category,rating} = book ;
 
   
 
     return (  
-        <NavLink to={"/bookDetails/"+book.bookId} >
+        <Link to={`/bookDetails/${bookId}`} >
             <div className="mt-8 ">       
          <div className="card  p-5 bg-base-100 shadow-xl border-2 border-gray-300 text-start ">
-                <figure className="bg-base-200 rounded-xl"><img className="h-[230px] p-6" src={image} alt={bookName} /></figure>
+                <figure className="bg-base-200 rounded-xl"><img className="h-[230px] p-6" src={image} alt={bookId} /></figure>
                 <div className="card-body flex flex-col">
                     <div className="flex-grow">
                     <div className="flex">
@@ -32,7 +32,7 @@ const Book = ({book}) => {
          </div>
          
         </div>
-        </NavLink>
+        </Link>
       
     );
 };
