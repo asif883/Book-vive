@@ -1,14 +1,9 @@
 import { FaAngleDown } from "react-icons/fa6";
 
-// import Read from "../Read books/Read";
-
-
-
-const ListedBooks = () => {
+const head = () => {
     return (
         <div>
-            
-          <div className="bg-gray-200 p-8 text-center rounded-lg ">
+            <div className="bg-gray-200 p-8 text-center rounded-lg ">
                 <h1 className="text-3xl font-bold">Books</h1>
             </div>
             <div className="text-center mt-5">
@@ -20,9 +15,8 @@ const ListedBooks = () => {
                     </ul>
                 </details>
             </div>
-            {/* <Read></Read> */}
         </div>
     );
 };
 
-export default ListedBooks;
+export default head;

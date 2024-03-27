@@ -1,5 +1,5 @@
 
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
 const BookDetails = () => {
@@ -42,9 +42,14 @@ const BookDetails = () => {
               </div>
               
               <div className="mt-10">
-                <button className="px-6 py-3 border-2 border-gray-500 rounded-lg font-semibold mr-5 hover:bg-[#23BE0A] hover:text-white">Read</button>
-                <button className="px-6 py-3 bg-[#50B1C9] rounded-lg text-white font-medium hover:shadow-xl">WishList</button>
-              </div>
+               <Link to={`/listed books/read/${bookId}`}>
+                  <button className="px-6 py-3 border-2 border-gray-500 rounded-lg font-semibold mr-5 hover:bg-[#23BE0A] hover:text-white">Read</button>
+               </Link>
+                <Link to={`/read/${bookId}`}>
+                    <button className="px-6 py-3 bg-[#50B1C9] rounded-lg text-white font-medium hover:shadow-xl">WishList</button>
+                    
+                </Link>
+               </div>
            </div>
         </div>
     );
