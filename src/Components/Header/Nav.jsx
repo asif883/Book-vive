@@ -25,7 +25,8 @@ const Nav = () => {
                 <ul className="menu menu-horizontal font-medium text-[#131313CC] px-1">
                 <NavLink to="/" className="text-xl mr-6">Home</NavLink>
                 <NavLink to="/listed books" className="text-xl mr-6">Listed Books</NavLink>
-               <NavLink to="/read pages" className="text-xl">Pages to Read</NavLink>
+               <NavLink to="/read pages" className="text-xl mr-6">Pages to Read</NavLink>
+               <NavLink to="/blog" className="text-xl ">Blogs</NavLink>
                 
                
                 </ul>
