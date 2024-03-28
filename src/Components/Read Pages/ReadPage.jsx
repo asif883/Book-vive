@@ -1,12 +1,17 @@
-import { useLoaderData } from 'react-router-dom';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { useLoaderData} from 'react-router-dom';
+import { BarChart, Bar,  XAxis, YAxis} from 'recharts';
+
+
+
 
 const ReadPage = () => {
       const books = useLoaderData();
+     
+      
 
     return (
         <div>
-           <BarChart width={600} height={600} data={books}
+           <BarChart width={900} height={600} data={books}
            margin={{
             top: 20,
             right: 30,
@@ -15,7 +20,12 @@ const ReadPage = () => {
           }}>
              <XAxis dataKey="bookName" />
               <YAxis dataKey="totalPages"/>
-      
+              <Bar
+                dataKey="totalPages"
+                fill="#00C29C"
+                
+             >
+        </Bar>
 
            </BarChart>
         </div>
