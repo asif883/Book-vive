@@ -1,21 +1,40 @@
 
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import {  useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveReadBook } from "../Utilits/LocalStroge";
+import { saveWishBook } from "../Utilits/wishStroage";
 
 
 const BookDetails = () => {
     const books = useLoaderData();
     // console.log(books)
     const {bookId} = useParams();
-    // console.log(bookId);
-    const SingleBook = books.find((book) => book.bookId == bookId ); 
+     const idInt =parseInt(bookId);
+    // console.log(idInt);
+    const SingleBook = books.find((book) => book.bookId === idInt ); 
     // console.log(SingleBook) 
   
     const {bookName,author,image,category,review,tags,publisher,yearOfPublishing,totalPages,rating} = SingleBook;
-  
+    const handleRead = () => {
+      saveReadBook(idInt);
+      toast("Added To The Read-List");      
+    }
+
+    const handleWish= ()=>{
+        saveWishBook(idInt);
+        
+          toast("Added to The WishList");
+        
+        
+        
+    }
     
     return (
        
-        <div className="mt-10 flex gap-8">
+       <div>
+            <ToastContainer />
+         <div className="mt-10 flex gap-8">
             <div className="h-[700px] w-[650px] bg-gray-100 rounded-xl ">
                <img className="h-[550px] w-[420px] mx-auto mt-16 " src={image} alt="" />
            </div>
@@ -42,16 +61,17 @@ const BookDetails = () => {
               </div>
               
               <div className="mt-10">
-               <Link to={`/listed books/read/${bookId}`}>
-                  <button className="px-6 py-3 border-2 border-gray-500 rounded-lg font-semibold mr-5 hover:bg-[#23BE0A] hover:text-white">Read</button>
-               </Link>
-                <Link to={`/read/${bookId}`}>
-                    <button className="px-6 py-3 bg-[#50B1C9] rounded-lg text-white font-medium hover:shadow-xl">WishList</button>
+               {/* <Link  to={`/listed books/${bookId}`}> */}
+                  <button onClick={handleRead} className="px-6 py-3 border-2 border-gray-500 rounded-lg font-semibold mr-5 hover:bg-[#23BE0A] hover:text-white">Read</button>
+               {/* </Link> */}
+                
+                    <button onClick={handleWish} className="px-6 py-3 bg-[#50B1C9] rounded-lg text-white font-medium hover:shadow-xl">WishList</button>
                     
-                </Link>
+               
                </div>
            </div>
         </div>
+       </div>
     );
 };
 
