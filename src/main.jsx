@@ -27,25 +27,25 @@ const router = createBrowserRouter([
       },
       {
         path: "/listed books",
-        loader: () => fetch ('/books.json'),
+        loader: () => fetch ('./books.json'),
         element : <ListedBooks></ListedBooks>
       }
       ,
       {
         path: "/bookDetails/:bookId",
-        loader: () => fetch ('/books.json'),
+        loader: () => fetch ('./books.json'),
         element : <BookDetails></BookDetails>
       }
       ,
       {
         path :"/read pages",
-        loader: () => fetch ('/books.json'),
+        loader: () => fetch ('./books.json'),
         element: <ReadPage></ReadPage>
 
       },
       {
         path: "/blog",
-        loader: ()=> fetch('/blog.json'),
+        loader: ()=> fetch('./blog.json'),
         element: <Blog></Blog>
 
       }
